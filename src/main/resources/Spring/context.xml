@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   					   http://www.springframework.org/schema/context
+	   					    http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="contactRepositoryId" class="DAO.ContactDAOimpl">
+        <property name="dbContactList">
+            <list>
+                <ref bean="Anna"/>
+                <ref bean="Serg"/>
+                <ref bean="Ivan"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="contactService" class="ContactService.ContactServiceImpl">
+        <!--<property name="contactRepository" ref="contactRepositoryId"/>-->
+    </bean>
+    <bean id="Anna" class="models.Contact">
+        <property name="name" value="Anna"/>
+        <property name="lastName" value="FamAnna"/>
+    </bean>
+
+    <bean id="Serg" class="models.Contact">
+        <property name="name" value="Serg"/>
+        <property name="lastName" value="FamSerg"/>
+    </bean>
+
+    <bean id="Ivan" class="models.Contact">
+        <property name="name" value="Ivan"/>
+        <property name="lastName" value="FamIvan"/>
+    </bean>
+</beans>
