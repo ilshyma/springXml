@@ -15,7 +15,6 @@ public class Start {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/spring/context.xml");
         ContactServiceImpl contactService = applicationContext.getBean("contactService", ContactServiceImpl.class);
-//        System.out.println(Arrays.toString(contactService.getAllContacts().toArray()));
 
     }
 }
